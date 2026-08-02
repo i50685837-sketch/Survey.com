@@ -644,4 +644,360 @@ greeting.innerHTML=
 
 /*==============================
   END PART 3A-3
+==================================================*//*==================================================
+  SURVEY.COM PREMIUM DASHBOARD
+  script.js
+  PART 3B
+  Survey Search • Categories • Countdown Timers
+==================================================*/
+
+"use strict";
+
+/*==============================
+  SURVEY SEARCH
+==============================*/
+
+const searchInput =
+document.getElementById("surveySearch");
+
+const surveyCards =
+document.querySelectorAll(".survey-card");
+
+
+if(searchInput){
+
+searchInput.addEventListener("input",function(){
+
+const value =
+this.value.toLowerCase();
+
+
+surveyCards.forEach(card=>{
+
+const text =
+card.innerText.toLowerCase();
+
+
+if(text.includes(value)){
+
+card.style.display="block";
+
+}else{
+
+card.style.display="none";
+
+}
+
+});
+
+
+});
+
+}
+
+
+/*==============================
+  CATEGORY FILTER
+==============================*/
+
+const categoryButtons =
+document.querySelectorAll(".category");
+
+
+categoryButtons.forEach(button=>{
+
+
+button.addEventListener("click",()=>{
+
+
+categoryButtons.forEach(btn=>{
+
+btn.classList.remove("active");
+
+});
+
+
+button.classList.add("active");
+
+
+const category =
+button.innerText.toLowerCase()
+.replace(/[^\w\s]/gi,"")
+.trim();
+
+
+surveyCards.forEach(card=>{
+
+
+const content =
+card.innerText.toLowerCase();
+
+
+if(category==="all"){
+
+card.style.display="block";
+
+}
+
+else if(content.includes(category)){
+
+card.style.display="block";
+
+}
+
+else{
+
+card.style.display="none";
+
+}
+
+
+});
+
+
+});
+
+
+});
+
+
+/*==============================
+  SURVEY COUNTDOWN TIMER
+==============================*/
+
+
+const timers =
+document.querySelectorAll(".timer");
+
+
+timers.forEach(timer=>{
+
+
+let time =
+timer.innerText.split(":");
+
+
+let hours =
+parseInt(time[0]);
+
+
+let minutes =
+parseInt(time[1]);
+
+
+let seconds =
+parseInt(time[2]);
+
+
+
+const countdown=setInterval(()=>{
+
+
+if(seconds>0){
+
+seconds--;
+
+}
+
+else if(minutes>0){
+
+minutes--;
+
+seconds=59;
+
+}
+
+else if(hours>0){
+
+hours--;
+
+minutes=59;
+
+seconds=59;
+
+}
+
+else{
+
+
+clearInterval(countdown);
+
+
+timer.innerHTML="EXPIRED";
+
+
+const card =
+timer.closest(".survey-card");
+
+
+if(card){
+
+
+const button =
+card.querySelector(".btn-primary");
+
+
+if(button){
+
+button.disabled=true;
+
+button.innerHTML=
+"Survey Expired";
+
+
+button.classList.add(
+"disabled"
+);
+
+
+}
+
+
+}
+
+
+return;
+
+}
+
+
+
+timer.innerHTML=
+
+String(hours).padStart(2,"0")
++":"
++
+String(minutes).padStart(2,"0")
++":"
++
+String(seconds).padStart(2,"0");
+
+
+
+},1000);
+
+
+
+});
+
+
+
+/*==============================
+  SORT SURVEYS
+==============================*/
+
+
+const sortSelect =
+document.querySelector(".filter-box select");
+
+
+if(sortSelect){
+
+
+sortSelect.addEventListener("change",()=>{
+
+
+const container =
+document.querySelector(".survey-grid");
+
+
+const cards =
+Array.from(
+container.children
+);
+
+
+let option =
+sortSelect.value;
+
+
+
+if(option==="Highest Reward"){
+
+
+cards.sort((a,b)=>{
+
+
+let rewardA =
+parseInt(
+a.querySelector(".reward")
+.innerText.replace(/\D/g,"")
+);
+
+
+let rewardB =
+parseInt(
+b.querySelector(".reward")
+.innerText.replace(/\D/g,"")
+);
+
+
+return rewardB-rewardA;
+
+
+});
+
+
+}
+
+
+
+cards.forEach(card=>{
+
+container.appendChild(card);
+
+});
+
+
+});
+
+
+}
+
+
+
+/*==============================
+  START SURVEY BUTTON
+==============================*/
+
+
+const startButtons =
+document.querySelectorAll(".survey-card .btn-primary");
+
+
+
+startButtons.forEach(button=>{
+
+
+button.addEventListener("click",()=>{
+
+
+const card =
+button.closest(".survey-card");
+
+
+const title =
+card.querySelector("h3").innerText;
+
+
+alert(
+
+"📝 Starting Survey:\n\n"
++
+title
++
+"\n\nAnswer questions honestly to receive your reward."
+
+);
+
+
+});
+
+
+});
+
+
+
+/*==============================
+  END PART 3B
 ==================================================*/
