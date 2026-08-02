@@ -189,4 +189,193 @@ window.addEventListener("scroll",()=>{
 
 /*==============================
   END PART 3A-1
+==============================*//*==================================================
+  SURVEY.COM PREMIUM DASHBOARD
+  script.js
+  PART 3A-2
+  Dark Mode • Smooth Scroll • Back To Top
+==================================================*/
+
+"use strict";
+
+/*==============================
+  DARK MODE
+==============================*/
+
+const darkModeToggle = document.getElementById("darkModeToggle");
+
+/* Load saved theme */
+
+const savedTheme = localStorage.getItem("survey-theme");
+
+if(savedTheme==="dark"){
+
+    document.body.classList.add("dark-theme");
+
+}
+
+/* Toggle Theme */
+
+if(darkModeToggle){
+
+darkModeToggle.addEventListener("click",function(e){
+
+e.preventDefault();
+
+document.body.classList.toggle("dark-theme");
+
+if(document.body.classList.contains("dark-theme")){
+
+localStorage.setItem("survey-theme","dark");
+
+}else{
+
+localStorage.setItem("survey-theme","light");
+
+}
+
+});
+
+}
+
+/*==============================
+  SMOOTH SCROLL
+==============================*/
+
+document.querySelectorAll('a[href^="#"]').forEach(link=>{
+
+link.addEventListener("click",function(e){
+
+const target=document.querySelector(this.getAttribute("href"));
+
+if(target){
+
+e.preventDefault();
+
+target.scrollIntoView({
+
+behavior:"smooth",
+
+block:"start"
+
+});
+
+}
+
+});
+
+});
+
+/*==============================
+  BACK TO TOP
+==============================*/
+
+const backToTop=document.getElementById("backToTop");
+
+window.addEventListener("scroll",()=>{
+
+if(!backToTop) return;
+
+if(window.scrollY>300){
+
+backToTop.style.display="flex";
+
+}else{
+
+backToTop.style.display="none";
+
+}
+
+});
+
+if(backToTop){
+
+backToTop.addEventListener("click",()=>{
+
+window.scrollTo({
+
+top:0,
+
+behavior:"smooth"
+
+});
+
+});
+
+}
+
+/*==============================
+  ACTIVE SECTION
+==============================*/
+
+const sections=document.querySelectorAll("section");
+
+const navLinks=document.querySelectorAll(".sidebar-menu a");
+
+window.addEventListener("scroll",()=>{
+
+let current="";
+
+sections.forEach(section=>{
+
+const sectionTop=section.offsetTop-120;
+
+const sectionHeight=section.offsetHeight;
+
+if(window.scrollY>=sectionTop){
+
+current=section.getAttribute("id");
+
+}
+
+});
+
+navLinks.forEach(link=>{
+
+link.classList.remove("active");
+
+const href=link.getAttribute("href");
+
+if(href==="#" + current){
+
+link.classList.add("active");
+
+}
+
+});
+
+});
+
+/*==============================
+  PAGE FADE-IN
+==============================*/
+
+window.addEventListener("load",()=>{
+
+document.body.classList.add("fade-in");
+
+});
+
+/*==============================
+  TOOLTIP EFFECT
+==============================*/
+
+document.querySelectorAll("[data-tooltip]").forEach(item=>{
+
+item.addEventListener("mouseenter",()=>{
+
+item.classList.add("show-tooltip");
+
+});
+
+item.addEventListener("mouseleave",()=>{
+
+item.classList.remove("show-tooltip");
+
+});
+
+});
+
+/*==============================
+  END PART 3A-2
 ==============================*/
