@@ -1070,3 +1070,354 @@ nav a.active::after{
 }
 
 /* End of Part 1D */
+/*==================================================
+   SURVEY.COM PREMIUM STYLE.CSS
+   PART 2A
+   Dashboard • Stats • Wallet • Survey Cards
+==================================================*/
+
+/* Dashboard */
+
+.dashboard{
+
+    display:grid;
+
+    grid-template-columns:280px 1fr;
+
+    gap:30px;
+
+    min-height:100vh;
+
+    padding:100px 30px 30px;
+
+}
+
+/* Sidebar */
+
+.sidebar{
+
+    background:var(--glass);
+
+    backdrop-filter:blur(18px);
+
+    border:1px solid var(--border);
+
+    border-radius:25px;
+
+    padding:25px;
+
+    box-shadow:var(--shadow);
+
+    position:sticky;
+
+    top:90px;
+
+    height:fit-content;
+
+}
+
+/* User Profile */
+
+.profile{
+
+    text-align:center;
+
+    margin-bottom:30px;
+
+}
+
+.profile img{
+
+    width:100px;
+
+    height:100px;
+
+    border-radius:50%;
+
+    border:4px solid var(--accent);
+
+    margin:auto;
+
+    object-fit:cover;
+
+}
+
+.profile h3{
+
+    margin-top:15px;
+
+    color:var(--white);
+
+}
+
+.profile p{
+
+    font-size:14px;
+
+    color:var(--text);
+
+}
+
+/* Sidebar Menu */
+
+.sidebar ul{
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:10px;
+
+}
+
+.sidebar ul li a{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:12px;
+
+    padding:14px 18px;
+
+    border-radius:15px;
+
+    color:var(--white);
+
+    transition:.35s;
+
+}
+
+.sidebar ul li a:hover{
+
+    background:rgba(255,255,255,.12);
+
+    color:var(--accent);
+
+    transform:translateX(8px);
+
+}
+
+.sidebar ul li a.active{
+
+    background:var(--primary);
+
+    color:var(--white);
+
+}
+
+/* Dashboard Content */
+
+.dashboard-content{
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:25px;
+
+}
+
+/* Welcome Card */
+
+.welcome-card{
+
+    background:linear-gradient(135deg,#2563eb,#1e40af);
+
+    border-radius:25px;
+
+    padding:35px;
+
+    color:#fff;
+
+    box-shadow:var(--shadow);
+
+}
+
+.welcome-card h2{
+
+    margin-bottom:10px;
+
+}
+
+/* Statistics Grid */
+
+.stats-grid{
+
+    display:grid;
+
+    grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+
+    gap:20px;
+
+}
+
+/* Statistic Card */
+
+.stat-card{
+
+    background:var(--glass);
+
+    backdrop-filter:blur(15px);
+
+    border:1px solid var(--border);
+
+    border-radius:20px;
+
+    padding:25px;
+
+    box-shadow:var(--shadow);
+
+    transition:.35s;
+
+}
+
+.stat-card:hover{
+
+    transform:translateY(-8px);
+
+}
+
+.stat-card h3{
+
+    color:var(--accent);
+
+    font-size:2rem;
+
+}
+
+.stat-card span{
+
+    color:var(--text);
+
+}
+
+/* Wallet Card */
+
+.wallet-card{
+
+    background:linear-gradient(135deg,#16a34a,#22c55e);
+
+    border-radius:25px;
+
+    padding:30px;
+
+    color:#fff;
+
+    box-shadow:var(--shadow);
+
+}
+
+.wallet-card h4{
+
+    opacity:.9;
+
+}
+
+.wallet-card h1{
+
+    margin:15px 0;
+
+    font-size:2.8rem;
+
+}
+
+/* Survey Grid */
+
+.survey-grid{
+
+    display:grid;
+
+    grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+
+    gap:25px;
+
+}
+
+/* Survey Card */
+
+.survey-card{
+
+    background:var(--glass);
+
+    backdrop-filter:blur(15px);
+
+    border:1px solid var(--border);
+
+    border-radius:20px;
+
+    padding:25px;
+
+    transition:.35s;
+
+}
+
+.survey-card:hover{
+
+    transform:translateY(-8px);
+
+    box-shadow:0 20px 40px rgba(0,0,0,.4);
+
+}
+
+.survey-card h3{
+
+    margin-bottom:10px;
+
+}
+
+.survey-card p{
+
+    margin-bottom:20px;
+
+}
+
+.reward{
+
+    display:inline-block;
+
+    padding:8px 18px;
+
+    border-radius:30px;
+
+    background:var(--secondary);
+
+    color:#fff;
+
+    font-weight:600;
+
+}
+
+/* Progress Bar */
+
+.progress{
+
+    width:100%;
+
+    height:10px;
+
+    border-radius:20px;
+
+    background:rgba(255,255,255,.12);
+
+    overflow:hidden;
+
+    margin-top:18px;
+
+}
+
+.progress span{
+
+    display:block;
+
+    height:100%;
+
+    width:65%;
+
+    background:linear-gradient(90deg,#22c55e,#84cc16);
+
+    border-radius:20px;
+
+}
+
+/* End of Part 2A */
