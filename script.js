@@ -378,4 +378,270 @@ item.classList.remove("show-tooltip");
 
 /*==============================
   END PART 3A-2
+==============================*//*==================================================
+  SURVEY.COM PREMIUM DASHBOARD
+  script.js
+  PART 3A-3
+  Welcome Bonus • Dashboard Counters • Notifications
+==================================================*/
+
+"use strict";
+
+/*==============================
+  USER DATA
 ==============================*/
+
+let user = {
+
+    username: "Morde",
+
+    level: "Gold",
+
+    welcomeBonus: 150,
+
+    balance: 150,
+
+    earnings: 0,
+
+    surveyPoints: 150,
+
+    referralEarnings: 0,
+
+    completed: 0,
+
+    available: 25,
+
+    notifications: 4
+
+};
+
+/*==============================
+  ELEMENTS
+==============================*/
+
+const balanceElement =
+document.getElementById("availableBalance");
+
+const earningsElement =
+document.getElementById("totalEarnings");
+
+const pointsElement =
+document.getElementById("surveyPoints");
+
+const referralElement =
+document.getElementById("referralEarnings");
+
+const completedElement =
+document.getElementById("completedSurveys");
+
+const availableElement =
+document.getElementById("availableSurveys");
+
+/*==============================
+  UPDATE DASHBOARD
+==============================*/
+
+function updateDashboard(){
+
+if(balanceElement)
+balanceElement.innerHTML =
+"KSh " + user.balance.toFixed(2);
+
+if(earningsElement)
+earningsElement.innerHTML =
+"KSh " + user.earnings.toFixed(2);
+
+if(pointsElement)
+pointsElement.innerHTML =
+user.surveyPoints;
+
+if(referralElement)
+referralElement.innerHTML =
+"KSh " + user.referralEarnings.toFixed(2);
+
+if(completedElement)
+completedElement.innerHTML =
+user.completed;
+
+if(availableElement)
+availableElement.innerHTML =
+user.available;
+
+}
+
+updateDashboard();
+
+/*==============================
+  WELCOME BONUS
+==============================*/
+
+if(!localStorage.getItem("welcomeBonus")){
+
+setTimeout(function(){
+
+alert(
+"🎉 Welcome to Survey.com!\n\nYou have received your Welcome Bonus of KSh 150."
+);
+
+localStorage.setItem(
+"welcomeBonus",
+"claimed"
+);
+
+},1500);
+
+}
+
+/*==============================
+  COUNTER ANIMATION
+==============================*/
+
+const counters =
+document.querySelectorAll(".counter");
+
+counters.forEach(counter=>{
+
+counter.innerText="0";
+
+const updateCounter=()=>{
+
+const target =
++counter.getAttribute("data-target");
+
+const current =
++counter.innerText;
+
+const increment =
+Math.ceil(target/100);
+
+if(current<target){
+
+counter.innerText=current+increment;
+
+setTimeout(updateCounter,20);
+
+}else{
+
+counter.innerText=target;
+
+}
+
+};
+
+updateCounter();
+
+});
+
+/*==============================
+  NOTIFICATIONS
+==============================*/
+
+const messages=[
+
+"🆕 New Technology survey available!",
+
+"💰 Complete a survey and earn up to KSh 250.",
+
+"🎁 Daily bonus is ready to claim.",
+
+"⭐ Invite friends and earn referral rewards.",
+
+"📊 Your dashboard has been updated."
+
+];
+
+function showNotification(message){
+
+const box=document.createElement("div");
+
+box.className="notification";
+
+box.innerHTML=message;
+
+document.body.appendChild(box);
+
+setTimeout(()=>{
+
+box.classList.add("show");
+
+},100);
+
+setTimeout(()=>{
+
+box.classList.remove("show");
+
+setTimeout(()=>{
+
+box.remove();
+
+},500);
+
+},5000);
+
+}
+
+let noticeIndex=0;
+
+setInterval(()=>{
+
+showNotification(messages[noticeIndex]);
+
+noticeIndex++;
+
+if(noticeIndex>=messages.length){
+
+noticeIndex=0;
+
+}
+
+},30000);
+
+/*==============================
+  CURRENT DATE
+==============================*/
+
+const todayElement=
+document.getElementById("todayDate");
+
+if(todayElement){
+
+const today=new Date();
+
+todayElement.innerHTML=
+today.toDateString();
+
+}
+
+/*==============================
+  GREETING
+==============================*/
+
+const greeting=
+document.getElementById("greeting");
+
+if(greeting){
+
+const hour=new Date().getHours();
+
+if(hour<12){
+
+greeting.innerHTML=
+"☀️ Good Morning";
+
+}else if(hour<18){
+
+greeting.innerHTML=
+"🌤 Good Afternoon";
+
+}else{
+
+greeting.innerHTML=
+"🌙 Good Evening";
+
+}
+
+}
+
+/*==============================
+  END PART 3A-3
+==================================================*/
