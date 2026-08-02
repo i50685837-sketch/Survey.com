@@ -1000,4 +1000,454 @@ title
 
 /*==============================
   END PART 3B
+==================================================*//*==================================================
+  SURVEY.COM PREMIUM DASHBOARD
+  script.js
+  PART 3C
+  Survey Questions • Progress • Rewards • Wallet
+==================================================*/
+
+"use strict";
+
+
+/*==============================
+  SURVEY SYSTEM DATA
+==============================*/
+
+let activeSurvey = {
+
+    title: "",
+
+    reward: 0,
+
+    question: 1,
+
+    totalQuestions: 10,
+
+    answers: []
+
+};
+
+
+
+/*==============================
+  START SURVEY
+==============================*/
+
+const surveyStartButtons =
+document.querySelectorAll(".survey-card .btn-primary");
+
+
+surveyStartButtons.forEach(button=>{
+
+
+button.addEventListener("click",()=>{
+
+
+const card =
+button.closest(".survey-card");
+
+
+const title =
+card.querySelector("h3").innerText;
+
+
+const rewardText =
+card.querySelector(".reward")
+.innerText;
+
+
+const reward =
+parseInt(
+rewardText.replace(/\D/g,"")
+);
+
+
+
+activeSurvey.title=title;
+
+activeSurvey.reward=reward;
+
+activeSurvey.question=1;
+
+
+localStorage.setItem(
+"activeSurvey",
+JSON.stringify(activeSurvey)
+);
+
+
+
+window.location.href="#active-survey";
+
+
+
+});
+
+});
+
+
+
+/*==============================
+  QUESTION NAVIGATION
+==============================*/
+
+
+let currentQuestion = 1;
+
+
+const nextButton =
+document.querySelector(".btn-primary");
+
+
+const previousButton =
+document.querySelector(".btn-outline");
+
+
+
+function updateProgress(){
+
+
+const progress =
+document.getElementById(
+"surveyProgress"
+);
+
+
+const number =
+document.getElementById(
+"currentQuestion"
+);
+
+
+
+if(progress){
+
+let percent =
+(currentQuestion/10)*100;
+
+
+progress.style.width =
+percent+"%";
+
+}
+
+
+
+if(number){
+
+number.innerHTML =
+currentQuestion;
+
+}
+
+
+}
+
+
+
+if(nextButton){
+
+
+nextButton.addEventListener(
+"click",
+()=>{
+
+
+if(currentQuestion<10){
+
+
+currentQuestion++;
+
+
+updateProgress();
+
+
+showQuestion(
+currentQuestion
+);
+
+
+}
+
+
+
+});
+
+}
+
+
+
+if(previousButton){
+
+
+previousButton.addEventListener(
+"click",
+()=>{
+
+
+if(currentQuestion>1){
+
+
+currentQuestion--;
+
+
+updateProgress();
+
+
+showQuestion(
+currentQuestion
+);
+
+
+}
+
+
+
+});
+
+}
+
+
+
+
+/*==============================
+  SHOW QUESTIONS
+==============================*/
+
+
+function showQuestion(number){
+
+
+const questions =
+document.querySelectorAll(
+".question-card"
+);
+
+
+
+questions.forEach((question,index)=>{
+
+
+if(index+1===number){
+
+
+question.style.display="block";
+
+
+}else{
+
+
+question.style.display="none";
+
+
+}
+
+
+
+});
+
+
+}
+
+
+
+showQuestion(1);
+
+
+
+/*==============================
+  SUBMIT SURVEY
+==============================*/
+
+
+const surveyForm =
+document.getElementById(
+"surveyForm"
+);
+
+
+
+if(surveyForm){
+
+
+surveyForm.addEventListener(
+"submit",
+function(event){
+
+
+event.preventDefault();
+
+
+
+let data =
+JSON.parse(
+localStorage.getItem(
+"activeSurvey"
+)
+);
+
+
+
+if(!data){
+
+alert(
+"No active survey found"
+);
+
+return;
+
+}
+
+
+
+
+let balance =
+Number(
+localStorage.getItem(
+"balance"
+) || 150
+);
+
+
+
+balance += data.reward;
+
+
+
+localStorage.setItem(
+"balance",
+balance
+);
+
+
+
+let completed =
+Number(
+localStorage.getItem(
+"completedSurveys"
+) || 0
+);
+
+
+
+completed++;
+
+
+
+localStorage.setItem(
+"completedSurveys",
+completed
+);
+
+
+
+
+alert(
+
+"🎉 Congratulations!\n\n"
++
+"You earned KSh "
++
+data.reward
++
+"\n\nYour wallet has been updated."
+
+);
+
+
+
+window.location.href=
+"#wallet";
+
+
+
+});
+
+
+}
+
+
+
+/*==============================
+  WALLET UPDATE
+==============================*/
+
+
+function refreshWallet(){
+
+
+const balance =
+localStorage.getItem(
+"balance"
+) || 150;
+
+
+const wallet =
+document.getElementById(
+"availableBalance"
+);
+
+
+
+if(wallet){
+
+wallet.innerHTML =
+"KSh "
++
+Number(balance)
+.toFixed(2);
+
+}
+
+
+
+}
+
+
+
+refreshWallet();
+
+
+
+/*==============================
+  COMPLETED SURVEYS
+==============================*/
+
+
+function updateCompleted(){
+
+
+const completed =
+localStorage.getItem(
+"completedSurveys"
+) || 0;
+
+
+
+const element =
+document.getElementById(
+"completedSurveys"
+);
+
+
+
+if(element){
+
+element.innerHTML =
+completed;
+
+}
+
+
+}
+
+
+
+updateCompleted();
+
+
+
+/*==============================
+  END PART 3C
 ==================================================*/
