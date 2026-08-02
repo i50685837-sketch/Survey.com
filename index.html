@@ -847,3 +847,77 @@ document.getElementById("registerMessage").style.display="none";
 },2000);
 
 });
+
+
+// ==========================
+// LOGIN FORM
+// ==========================
+
+const loginForm = document.getElementById("loginForm");
+
+loginForm.addEventListener("submit", function(e){
+
+e.preventDefault();
+
+document.getElementById("loginMessage").style.display="block";
+
+setTimeout(function(){
+
+document.getElementById("loginMessage").style.display="none";
+
+alert("Welcome to Survey.com!");
+
+loginForm.reset();
+
+},2000);
+
+});
+
+
+// ==========================
+// FORGOT PASSWORD FORM
+// ==========================
+
+const forgotForm=document.getElementById("forgotForm");
+
+forgotForm.addEventListener("submit",function(e){
+
+e.preventDefault();
+
+document.getElementById("forgotMessage").style.display="block";
+
+setTimeout(function(){
+
+document.getElementById("forgotMessage").style.display="none";
+
+alert("Password reset link sent successfully.");
+
+forgotForm.reset();
+
+showPage("login");
+
+},2000);
+
+});
+
+
+// ==========================
+// INITIAL PAGE
+// ==========================
+
+window.onload=function(){
+
+showPage("home");
+
+};
+
+
+// ==========================
+// END OF SCRIPT
+// ==========================
+
+</script>
+
+</body>
+
+</html>
