@@ -612,3 +612,90 @@ Login
 </section>
 
 <!-- LOGIN SECTION STARTS BELOW -->
+  <!-- LOGIN -->
+
+<section id="login" class="fade">
+
+<div class="card">
+
+<div class="message" id="loginMessage">
+Login successful!
+</div>
+
+<h2 class="form-title">Welcome Back</h2>
+
+<p class="small">
+Sign in to continue earning with Survey.com.
+</p>
+
+<form id="loginForm">
+
+<div class="input-box">
+<label>Email Address</label>
+<input
+type="email"
+id="loginEmail"
+placeholder="Enter your email"
+required>
+</div>
+
+<div class="input-box">
+<label>Password</label>
+
+<div class="password-box">
+<input
+type="password"
+id="loginPassword"
+placeholder="Enter your password"
+required>
+
+<span onclick="togglePassword('loginPassword', this)">
+👁
+</span>
+
+</div>
+</div>
+
+<button
+type="submit"
+class="submit">
+
+Login
+
+</button>
+
+<div class="links">
+
+<p>
+
+<a href="#"
+onclick="showPage('forgot')">
+
+Forgot Password?
+
+</a>
+
+</p>
+
+<p>
+
+Don't have an account?
+
+<a href="#"
+onclick="showPage('register')">
+
+Create Account
+
+</a>
+
+</p>
+
+</div>
+
+</form>
+
+</div>
+
+</section>
+
+<!-- FORGOT PASSWORD SECTION STARTS BELOW -->
