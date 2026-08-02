@@ -1728,3 +1728,1098 @@ table tbody tr:hover{
 }
 
 /* End of Part 2B */
+/*==================================================
+   SURVEY.COM PREMIUM STYLE.CSS
+   PART 2C
+   Footer • Contact • Social • Back To Top
+==================================================*/
+
+/* Footer */
+
+footer{
+
+    margin-top:80px;
+
+    padding:60px 8% 25px;
+
+    background:rgba(10,15,30,.90);
+
+    border-top:1px solid rgba(255,255,255,.08);
+
+}
+
+/* Footer Grid */
+
+.footer-container{
+
+    display:grid;
+
+    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+
+    gap:35px;
+
+}
+
+/* Footer Logo */
+
+.footer-logo{
+
+    font-size:28px;
+
+    font-weight:700;
+
+    color:var(--white);
+
+    margin-bottom:15px;
+
+}
+
+.footer-logo span{
+
+    color:var(--accent);
+
+}
+
+/* Footer Text */
+
+.footer-text{
+
+    color:var(--text);
+
+    line-height:1.8;
+
+}
+
+/* Footer Headings */
+
+.footer-title{
+
+    color:var(--white);
+
+    margin-bottom:18px;
+
+    font-size:20px;
+
+}
+
+/* Footer Links */
+
+.footer-links{
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:12px;
+
+}
+
+.footer-links a{
+
+    color:var(--text);
+
+    transition:.3s;
+
+}
+
+.footer-links a:hover{
+
+    color:var(--accent);
+
+    padding-left:8px;
+
+}
+
+/* Contact List */
+
+.contact-list{
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:15px;
+
+}
+
+.contact-item{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:12px;
+
+    color:var(--text);
+
+}
+
+/* Social Icons */
+
+.social-icons{
+
+    display:flex;
+
+    gap:15px;
+
+    margin-top:20px;
+
+}
+
+.social-icons a{
+
+    width:48px;
+
+    height:48px;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    border-radius:50%;
+
+    background:rgba(255,255,255,.08);
+
+    color:var(--white);
+
+    font-size:20px;
+
+    transition:.35s;
+
+}
+
+.social-icons a:hover{
+
+    background:var(--primary);
+
+    transform:translateY(-6px) rotate(8deg);
+
+}
+
+/* Newsletter */
+
+.newsletter{
+
+    margin-top:20px;
+
+}
+
+.newsletter input{
+
+    width:100%;
+
+    padding:14px 18px;
+
+    margin-bottom:12px;
+
+    border-radius:30px;
+
+    background:rgba(255,255,255,.08);
+
+    color:var(--white);
+
+    border:1px solid rgba(255,255,255,.12);
+
+}
+
+.newsletter button{
+
+    width:100%;
+
+}
+
+/* Copyright */
+
+.copyright{
+
+    margin-top:45px;
+
+    padding-top:25px;
+
+    border-top:1px solid rgba(255,255,255,.08);
+
+    text-align:center;
+
+    color:var(--text);
+
+    font-size:14px;
+
+}
+
+/* Back To Top Button */
+
+#backToTop{
+
+    position:fixed;
+
+    right:25px;
+
+    bottom:25px;
+
+    width:55px;
+
+    height:55px;
+
+    border-radius:50%;
+
+    background:var(--primary);
+
+    color:var(--white);
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    font-size:22px;
+
+    cursor:pointer;
+
+    box-shadow:0 10px 25px rgba(37,99,235,.4);
+
+    transition:.35s;
+
+    z-index:999;
+
+}
+
+#backToTop:hover{
+
+    transform:translateY(-8px);
+
+    background:var(--accent);
+
+    color:var(--black);
+
+}
+
+/* Horizontal Line */
+
+.line{
+
+    width:100%;
+
+    height:1px;
+
+    background:rgba(255,255,255,.08);
+
+    margin:30px 0;
+
+}
+
+/* Glass Effect Utility */
+
+.glass{
+
+    background:rgba(255,255,255,.08);
+
+    backdrop-filter:blur(15px);
+
+    border:1px solid rgba(255,255,255,.12);
+
+    border-radius:20px;
+
+}
+
+/* Shadow Utility */
+
+.shadow{
+
+    box-shadow:0 15px 35px rgba(0,0,0,.35);
+
+}
+
+/* Rounded Utility */
+
+.round{
+
+    border-radius:20px;
+
+}
+
+/* End of Part 2C */
+/*==================================================
+   SURVEY.COM PREMIUM STYLE.CSS
+   PART 3A
+   Premium Animations & Effects
+==================================================*/
+
+/* Fade In */
+
+@keyframes fadeIn{
+
+0%{
+opacity:0;
+}
+
+100%{
+opacity:1;
+}
+
+}
+
+/* Fade Up */
+
+@keyframes fadeUp{
+
+0%{
+
+opacity:0;
+
+transform:translateY(40px);
+
+}
+
+100%{
+
+opacity:1;
+
+transform:translateY(0);
+
+}
+
+}
+
+/* Fade Down */
+
+@keyframes fadeDown{
+
+0%{
+
+opacity:0;
+
+transform:translateY(-40px);
+
+}
+
+100%{
+
+opacity:1;
+
+transform:translateY(0);
+
+}
+
+}
+
+/* Slide Left */
+
+@keyframes slideLeft{
+
+0%{
+
+opacity:0;
+
+transform:translateX(100px);
+
+}
+
+100%{
+
+opacity:1;
+
+transform:translateX(0);
+
+}
+
+}
+
+/* Slide Right */
+
+@keyframes slideRight{
+
+0%{
+
+opacity:0;
+
+transform:translateX(-100px);
+
+}
+
+100%{
+
+opacity:1;
+
+transform:translateX(0);
+
+}
+
+}
+
+/* Zoom In */
+
+@keyframes zoomIn{
+
+0%{
+
+opacity:0;
+
+transform:scale(.5);
+
+}
+
+100%{
+
+opacity:1;
+
+transform:scale(1);
+
+}
+
+}
+
+/* Zoom Out */
+
+@keyframes zoomOut{
+
+0%{
+
+transform:scale(1.15);
+
+}
+
+100%{
+
+transform:scale(1);
+
+}
+
+}
+
+/* Bounce */
+
+@keyframes bounce{
+
+0%,100%{
+
+transform:translateY(0);
+
+}
+
+50%{
+
+transform:translateY(-15px);
+
+}
+
+}
+
+/* Pulse */
+
+@keyframes pulse{
+
+0%{
+
+transform:scale(1);
+
+}
+
+50%{
+
+transform:scale(1.06);
+
+}
+
+100%{
+
+transform:scale(1);
+
+}
+
+}
+
+/* Float */
+
+@keyframes floating{
+
+0%{
+
+transform:translateY(0px);
+
+}
+
+50%{
+
+transform:translateY(-12px);
+
+}
+
+100%{
+
+transform:translateY(0px);
+
+}
+
+}
+
+/* Rotate */
+
+@keyframes rotate360{
+
+from{
+
+transform:rotate(0deg);
+
+}
+
+to{
+
+transform:rotate(360deg);
+
+}
+
+}
+
+/* Shake */
+
+@keyframes shake{
+
+0%,100%{
+
+transform:translateX(0);
+
+}
+
+25%{
+
+transform:translateX(-8px);
+
+}
+
+50%{
+
+transform:translateX(8px);
+
+}
+
+75%{
+
+transform:translateX(-8px);
+
+}
+
+}
+
+/* Glow */
+
+@keyframes glow{
+
+0%{
+
+box-shadow:0 0 5px rgba(37,99,235,.2);
+
+}
+
+50%{
+
+box-shadow:0 0 30px rgba(37,99,235,.7);
+
+}
+
+100%{
+
+box-shadow:0 0 5px rgba(37,99,235,.2);
+
+}
+
+}
+
+/* Utility Animation Classes */
+
+.fade-in{
+
+animation:fadeIn .8s ease;
+
+}
+
+.fade-up{
+
+animation:fadeUp .8s ease;
+
+}
+
+.fade-down{
+
+animation:fadeDown .8s ease;
+
+}
+
+.slide-left{
+
+animation:slideLeft .8s ease;
+
+}
+
+.slide-right{
+
+animation:slideRight .8s ease;
+
+}
+
+.zoom-in{
+
+animation:zoomIn .6s ease;
+
+}
+
+.zoom-out{
+
+animation:zoomOut .6s ease;
+
+}
+
+.bounce{
+
+animation:bounce 2s infinite;
+
+}
+
+.pulse{
+
+animation:pulse 2s infinite;
+
+}
+
+.float{
+
+animation:floating 4s ease-in-out infinite;
+
+}
+
+.rotate{
+
+animation:rotate360 8s linear infinite;
+
+}
+
+.shake{
+
+animation:shake .5s;
+
+}
+
+.glow{
+
+animation:glow 2s infinite;
+
+}
+
+/* Hover Effects */
+
+.hover-lift:hover{
+
+transform:translateY(-10px);
+
+transition:.35s;
+
+}
+
+.hover-scale:hover{
+
+transform:scale(1.05);
+
+transition:.35s;
+
+}
+
+.hover-rotate:hover{
+
+transform:rotate(5deg);
+
+transition:.35s;
+
+}
+
+.hover-shadow:hover{
+
+box-shadow:0 20px 40px rgba(0,0,0,.45);
+
+transition:.35s;
+
+}
+
+/* Loading Spinner */
+
+.spinner{
+
+width:50px;
+
+height:50px;
+
+border:5px solid rgba(255,255,255,.2);
+
+border-top:5px solid var(--accent);
+
+border-radius:50%;
+
+animation:rotate360 1s linear infinite;
+
+margin:auto;
+
+}
+
+/* End of Part 3A */
+/*==================================================
+   SURVEY.COM PREMIUM STYLE.CSS
+   PART 3B
+   Responsive Design • Utilities • Final Touches
+==================================================*/
+
+/* ========== Large Screens ========== */
+
+@media (max-width:1200px){
+
+.container{
+
+    width:95%;
+
+}
+
+.hero{
+
+    gap:40px;
+
+}
+
+.dashboard{
+
+    grid-template-columns:250px 1fr;
+
+}
+
+}
+
+/* ========== Tablets ========== */
+
+@media (max-width:992px){
+
+header{
+
+    padding:15px 5%;
+
+}
+
+.hero{
+
+    flex-direction:column;
+
+    text-align:center;
+
+    padding-top:120px;
+
+}
+
+.hero-text{
+
+    order:2;
+
+}
+
+.hero-image{
+
+    order:1;
+
+}
+
+.hero-text h1{
+
+    font-size:2.8rem;
+
+}
+
+.dashboard{
+
+    grid-template-columns:1fr;
+
+}
+
+.sidebar{
+
+    position:relative;
+
+    top:0;
+
+}
+
+.stats-grid,
+
+.features,
+
+.survey-grid,
+
+.footer-container,
+
+.achievement-grid{
+
+    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+
+}
+
+}
+
+/* ========== Mobile Phones ========== */
+
+@media (max-width:768px){
+
+header{
+
+    flex-direction:column;
+
+    gap:15px;
+
+    padding:15px;
+
+}
+
+nav{
+
+    flex-wrap:wrap;
+
+    justify-content:center;
+
+    gap:15px;
+
+}
+
+.hero{
+
+    padding-top:150px;
+
+}
+
+.hero-text h1{
+
+    font-size:2.2rem;
+
+}
+
+.hero-text p{
+
+    font-size:15px;
+
+}
+
+.btn{
+
+    width:100%;
+
+}
+
+.card,
+
+.form-card,
+
+.stat-card,
+
+.survey-card,
+
+.wallet-card,
+
+.reward-card,
+
+.profile-card{
+
+    padding:20px;
+
+}
+
+.profile-actions{
+
+    flex-direction:column;
+
+}
+
+table{
+
+    min-width:650px;
+
+}
+
+#backToTop{
+
+    width:50px;
+
+    height:50px;
+
+    right:15px;
+
+    bottom:15px;
+
+}
+
+}
+
+/* ========== Small Phones ========== */
+
+@media (max-width:480px){
+
+.logo{
+
+    font-size:22px;
+
+}
+
+.hero-text h1{
+
+    font-size:1.8rem;
+
+}
+
+h2{
+
+    font-size:1.7rem;
+
+}
+
+p{
+
+    font-size:14px;
+
+}
+
+.btn{
+
+    padding:14px 20px;
+
+    font-size:15px;
+
+}
+
+input,
+
+textarea,
+
+select{
+
+    font-size:14px;
+
+}
+
+.profile img{
+
+    width:80px;
+
+    height:80px;
+
+}
+
+}
+
+/* ========== Utility Classes ========== */
+
+.hidden{
+
+    display:none !important;
+
+}
+
+.show{
+
+    display:block !important;
+
+}
+
+.flex{
+
+    display:flex;
+
+}
+
+.grid{
+
+    display:grid;
+
+}
+
+.center{
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+}
+
+.w-100{
+
+    width:100%;
+
+}
+
+.h-100{
+
+    height:100%;
+
+}
+
+.text-white{
+
+    color:var(--white);
+
+}
+
+.text-primary{
+
+    color:var(--primary);
+
+}
+
+.text-success{
+
+    color:var(--secondary);
+
+}
+
+.text-danger{
+
+    color:var(--danger);
+
+}
+
+.bg-primary{
+
+    background:var(--primary);
+
+}
+
+.bg-success{
+
+    background:var(--secondary);
+
+}
+
+.rounded{
+
+    border-radius:var(--radius);
+
+}
+
+.shadow-lg{
+
+    box-shadow:var(--shadow);
+
+}
+
+/* Disable Animations for Accessibility */
+
+@media (prefers-reduced-motion: reduce){
+
+*{
+
+    animation:none !important;
+
+    transition:none !important;
+
+    scroll-behavior:auto !important;
+
+}
+
+}
+
+/*==================================================
+   END OF SURVEY.COM PREMIUM STYLE.CSS
+==================================================*/
