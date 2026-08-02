@@ -767,3 +767,83 @@ Back to Login
 
 <!-- JavaScript starts in Part 2 -->
 <script>
+
+  // ==========================
+// SURVEY.COM JAVASCRIPT
+// Part 2A
+// ==========================
+
+// Show selected page
+function showPage(pageId){
+
+const sections=document.querySelectorAll("section");
+
+sections.forEach(section=>{
+
+section.classList.remove("active");
+
+});
+
+const current=document.getElementById(pageId);
+
+current.classList.add("active");
+
+window.scrollTo({
+
+top:0,
+behavior:"smooth"
+
+});
+
+}
+
+// Toggle password visibility
+function togglePassword(id,icon){
+
+const input=document.getElementById(id);
+
+if(input.type==="password"){
+
+input.type="text";
+icon.innerHTML="🙈";
+
+}else{
+
+input.type="password";
+icon.innerHTML="👁";
+
+}
+
+}
+
+// Register form
+const registerForm=document.getElementById("registerForm");
+
+registerForm.addEventListener("submit",function(e){
+
+e.preventDefault();
+
+const password=document.getElementById("regPassword").value;
+
+const confirm=document.getElementById("regConfirm").value;
+
+if(password!==confirm){
+
+alert("Passwords do not match.");
+return;
+
+}
+
+document.getElementById("registerMessage").style.display="block";
+
+setTimeout(()=>{
+
+showPage("login");
+
+registerForm.reset();
+
+document.getElementById("registerMessage").style.display="none";
+
+},2000);
+
+});
