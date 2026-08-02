@@ -769,3 +769,304 @@ nav a.active::after{
 }
 
 /* End of Part 1C */
+/*==================================================
+   SURVEY.COM PREMIUM STYLE.CSS
+   PART 1D
+   Register • Login • Forgot Password Forms
+==================================================*/
+
+/* Form Container */
+
+.form-container{
+
+    width:100%;
+
+    max-width:480px;
+
+    margin:40px auto;
+
+}
+
+/* Form Card */
+
+.form-card{
+
+    background:var(--glass);
+
+    backdrop-filter:blur(20px);
+
+    border:1px solid var(--border);
+
+    border-radius:25px;
+
+    padding:35px;
+
+    box-shadow:var(--shadow);
+
+    animation:fadeUp .7s ease;
+
+}
+
+/* Form Title */
+
+.form-card h2{
+
+    text-align:center;
+
+    color:var(--white);
+
+    margin-bottom:10px;
+
+}
+
+.form-card p{
+
+    text-align:center;
+
+    margin-bottom:30px;
+
+}
+
+/* Input Group */
+
+.input-group{
+
+    margin-bottom:22px;
+
+    position:relative;
+
+}
+
+/* Label */
+
+.input-group label{
+
+    display:block;
+
+    margin-bottom:8px;
+
+    color:var(--white);
+
+    font-weight:500;
+
+}
+
+/* Input Fields */
+
+.input-group input{
+
+    width:100%;
+
+    padding:15px 18px;
+
+    border-radius:14px;
+
+    background:rgba(255,255,255,.08);
+
+    border:1px solid rgba(255,255,255,.12);
+
+    color:var(--white);
+
+    font-size:15px;
+
+    transition:all .3s ease;
+
+}
+
+/* Placeholder */
+
+.input-group input::placeholder{
+
+    color:#d1d5db;
+
+}
+
+/* Focus */
+
+.input-group input:focus{
+
+    border-color:var(--primary);
+
+    box-shadow:0 0 15px rgba(37,99,235,.4);
+
+}
+
+/* Password Toggle */
+
+.password-box{
+
+    position:relative;
+
+}
+
+.password-box span{
+
+    position:absolute;
+
+    top:50%;
+
+    right:18px;
+
+    transform:translateY(-50%);
+
+    cursor:pointer;
+
+    user-select:none;
+
+    color:#d1d5db;
+
+    font-size:18px;
+
+}
+
+/* Submit Button */
+
+.form-submit{
+
+    width:100%;
+
+    margin-top:10px;
+
+    padding:15px;
+
+    border-radius:50px;
+
+    background:var(--primary);
+
+    color:var(--white);
+
+    font-size:16px;
+
+    font-weight:600;
+
+    transition:.35s;
+
+}
+
+.form-submit:hover{
+
+    background:#1d4ed8;
+
+    transform:translateY(-3px);
+
+}
+
+/* Form Links */
+
+.form-links{
+
+    margin-top:20px;
+
+    text-align:center;
+
+}
+
+.form-links a{
+
+    color:var(--accent);
+
+    font-weight:600;
+
+}
+
+.form-links a:hover{
+
+    text-decoration:underline;
+
+}
+
+/* Success Message */
+
+.success-message{
+
+    display:none;
+
+    margin-bottom:18px;
+
+    padding:14px;
+
+    border-radius:12px;
+
+    background:rgba(34,197,94,.2);
+
+    border:1px solid rgba(34,197,94,.5);
+
+    color:#bbf7d0;
+
+    text-align:center;
+
+}
+
+/* Error Message */
+
+.error-message{
+
+    display:none;
+
+    margin-bottom:18px;
+
+    padding:14px;
+
+    border-radius:12px;
+
+    background:rgba(239,68,68,.2);
+
+    border:1px solid rgba(239,68,68,.5);
+
+    color:#fecaca;
+
+    text-align:center;
+
+}
+
+/* Input Error */
+
+.input-error{
+
+    border:1px solid var(--danger)!important;
+
+    box-shadow:0 0 12px rgba(239,68,68,.4);
+
+}
+
+/* Input Success */
+
+.input-success{
+
+    border:1px solid var(--secondary)!important;
+
+    box-shadow:0 0 12px rgba(34,197,94,.4);
+
+}
+
+/* Divider */
+
+.form-divider{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:15px;
+
+    margin:25px 0;
+
+    color:#d1d5db;
+
+}
+
+.form-divider::before,
+
+.form-divider::after{
+
+    content:"";
+
+    flex:1;
+
+    height:1px;
+
+    background:rgba(255,255,255,.2);
+
+}
+
+/* End of Part 1D */
